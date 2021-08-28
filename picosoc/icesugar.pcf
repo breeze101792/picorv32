@@ -13,12 +13,15 @@ set_io flash_io1  17
 set_io flash_io2  12
 set_io flash_io3  13
 
-# LEDs (PMOD 2)
-set_io led1       27
-set_io led2       25
-set_io led3       21
+# LEDs (PMOD 3)
+set_io led1       32
+set_io led2       28
+set_io led3       26
 set_io led4       23
-set_io led5       26
+set_io led5       34
+set_io led6       31
+set_io led7       27
+set_io led8       25
 
 # Onboard LEDs
 set_io ledr_n     41
