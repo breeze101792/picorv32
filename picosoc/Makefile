@@ -4,6 +4,8 @@ CFLAGS=
 
 all: icesimg
 
+flash: icesflash
+
 # ---- iCE40 HX8K Breakout Board ----
 
 hx8ksim: hx8kdemo_tb.vvp hx8kdemo_fw.hex
@@ -142,6 +144,11 @@ icesprog: icesugar.bin icesugar_fw.bin
             #echo "iCELink not found"; \
             #exit 1; \
     #fi
+icesflash:
+	-@sudo umount /mnt/usb
+	sudo mount /dev/$(shell lsblk -S |grep MBED |cut -d " " -f 1) /mnt/usb
+	sudo cp picorv32.bin /mnt/usb
+	sync
 
 icesimg: icesugar.bin icesugar_fw.bin
 	truncate -s 1048576 icesugar.bin
