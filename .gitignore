@@ -1,3 +1,10 @@
+picosoc/icesugar.asc
+picosoc/icesugar.bin
+picosoc/icesugar.json
+picosoc/icesugar.rpt
+picosoc/icesugar_fw.bin
+picosoc/icesugar_fw.elf
+picosoc/picorv32.bin
 /tests/*.o
 /firmware/*.o
 /firmware/firmware.bin
