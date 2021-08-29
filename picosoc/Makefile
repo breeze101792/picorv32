@@ -158,7 +158,6 @@ icesflash:
 	sync
 
 icesimg: icesugar.bin icesugar_fw.bin
-	_fw.bin
 	truncate -s 1048576 icesugar.bin
 	cat icesugar.bin icesugar_fw.bin > picorv32.bin
 
