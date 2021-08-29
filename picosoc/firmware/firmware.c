@@ -661,7 +661,7 @@ void cmd_echo()
     while ((c = getchar()) != '!')
         putchar(c);
 }
-void set_led(E_FW_LED_STATUS enStatus)
+void set_led(E_FW_STATUS enStatus)
 {
     reg_leds = ~enStatus;
 }
@@ -670,7 +670,7 @@ void set_led(E_FW_LED_STATUS enStatus)
 
 void main()
 {
-    set_led(EN_FW_LED_RESET);
+    set_led(EN_FW_STATUS_RESET);
     reg_uart_clkdiv = 104;
     print("Booting..\n");
 
@@ -705,7 +705,7 @@ void main()
 
     while (1)
     {
-        set_led(EN_FW_LED_LOPPING);
+        set_led(EN_FW_STATUS_LOPPING);
         print("\n");
 
         print("Select an action:\n");
