@@ -57,16 +57,16 @@ module icesugar (
 		reset_cnt <= reset_cnt + !resetn;
 	end
 
-	wire [8:0] leds;
+	wire [7:0] leds;
 
-	assign led1 = leds[1];
-	assign led2 = leds[2];
-	assign led3 = leds[3];
-	assign led4 = leds[4];
-	assign led5 = leds[5];
-	assign led6 = leds[6];
-	assign led7 = leds[7];
-	assign led8 = leds[8];
+	assign led1 = leds[0];
+	assign led2 = leds[1];
+	assign led3 = leds[2];
+	assign led4 = leds[3];
+	assign led5 = leds[4];
+	assign led6 = leds[5];
+	assign led7 = leds[6];
+	assign led8 = leds[7];
 
 	// assign ledr_n = !leds[6];
 	// assign ledg_n = !leds[7];

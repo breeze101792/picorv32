@@ -663,7 +663,7 @@ void cmd_echo()
 }
 void set_led(E_FW_LED_STATUS enStatus)
 {
-    reg_leds = ~enStatus << 1;
+    reg_leds = ~enStatus;
 }
 
 // --------------------------------------------------------
@@ -697,7 +697,7 @@ void main()
     print(" KiB\n");
     print("\n");
 
-    //cmd_memtest(); // test overwrites bss and data memory
+    cmd_memtest(); // test overwrites bss and data memory
     print("\n");
 
     cmd_print_spi_state();
@@ -706,7 +706,6 @@ void main()
     while (1)
     {
         set_led(EN_FW_LED_LOPPING);
-        print(EN_FW_LED_LOPPING);
         print("\n");
 
         print("Select an action:\n");

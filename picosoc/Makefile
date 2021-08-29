@@ -164,8 +164,8 @@ icesimg: icesugar.bin icesugar_fw.bin
 icesugar_sections.lds: sections.lds
 	$(CROSS)cpp -P -DICEBREAKER -o $@ $^
 
-icesugar_fw.elf: icesugar_sections.lds start.s firmware.c
-	$(CROSS)gcc $(CFLAGS) -DICEBREAKER -march=rv32ic -Wl,-Bstatic,-T,icesugar_sections.lds,--strip-debug -ffreestanding -nostdlib -o icesugar_fw.elf start.s firmware.c
+icesugar_fw.elf: firmware/icesugar_sections.lds firmware/start.s firmware/firmware.c
+	$(CROSS)gcc $(CFLAGS) -DICEBREAKER -march=rv32ic -Wl,-Bstatic,-T,firmware/icesugar_sections.lds,--strip-debug -ffreestanding -nostdlib -o icesugar_fw.elf firmware/start.s firmware/firmware.c
 
 icesugar_fw.hex: icesugar_fw.elf
 	$(CROSS)objcopy -O verilog icesugar_fw.elf icesugar_fw.hex

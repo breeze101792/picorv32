@@ -43,10 +43,10 @@ module testbench;
 		cycle_cnt <= cycle_cnt + 1;
 	end
 
-	wire led1, led2, led3, led4, led5;
-	wire ledr_n, ledg_n;
+	wire led1, led2, led3, led4, led5, led6, led7, led8;
+	// wire ledr_n, ledg_n;
 
-	wire [6:0] leds = {!ledg_n, !ledr_n, led5, led4, led3, led2, led1};
+	wire [7:0] leds = {led8, led7, led6, led5, led4, led3, led2, led1};
 
 	wire ser_rx;
 	wire ser_tx;
